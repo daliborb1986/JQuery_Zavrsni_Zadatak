@@ -16,7 +16,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"
+    />
     <link rel="stylesheet" href="./styles.css" />
     <title>Courses</title>
   </head>
@@ -100,36 +103,85 @@
           </h3>
         </div>
       </header>
-    </div>
-    <div class="container-fluid containerColor p-4">
-        <table id="table" class="table table-striped table-hover p-1">
-            <thead>
-                <tr>
-                <th class="containerColor">Courses</th>
-                <th class="containerColor">Starting date</th>
-                <th class="containerColor">Duration</th>
-                <th class="containerColor">Price</th>
-                <th class="containerColor">Details</th>
-                <th class="containerColor"></th>
-                </tr>
-            </thead>
-            <tbody id="tbody"></tbody>
-        </table>
-    </div>
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <!-- <script src="Scripts/jquery.validate.min.js"></script> -->
-    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./jquery.js"></script>
+      <div class="container-fluid containerColor p-4 pb-5">
+        <table id="table" class="table table-striped table-hover p-1">
+          <thead>
+            <tr>
+              <th class="containerColor">Courses</th>
+              <th class="containerColor">Starting date</th>
+              <th class="containerColor">Duration</th>
+              <th class="containerColor">Price</th>
+              <th class="containerColor">Details</th>
+              <th class="containerColor"></th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+        <div class="buttonReservation w-100 d-flex justify-content-end">
+          <button
+            type="button"
+            class="btn btn-outline-info px-5 my-3 text-light"
+          >
+            View reservations
+          </button>
+        </div>
+      </div>
+      <section>
+        <div class="container-fluid py-5 align-middle footer-container">
+          <div class="row">
+            <div class="col-lg-4 text-center">
+              <h4 class="footer-title pb-2 mb-2 text-uppercase">Location</h4>
+              <p class="footer-paragraph mb-5">
+                <span class="text-uppercase">Smartinit</span> Novi Sad
+                <br />Serbia
+              </p>
+            </div>
+            <div class="col-lg-4 text-center">
+              <h4 class="footer-title pb-2 mb-2 text-uppercase">
+                Around the Web
+              </h4>
+              <a href="#"
+                ><i class="fa-brands fa-facebook-f social-icon mb-5"></i
+              ></a>
+              <a href="#"
+                ><i class="fa-brands fa-twitter social-icon mb-5"></i
+              ></a>
+              <a href="#"
+                ><i class="fa-brands fa-linkedin-in social-icon mb-5"></i
+              ></a>
+              <a href="#"
+                ><i class="fa-brands fa-dribbble social-icon mb-5"></i
+              ></a>
+            </div>
+            <div class="col-lg-4 text-center">
+              <h4 class="footer-title pb-2 mb-2 text-uppercase">
+                About Smartinit
+              </h4>
+              <p class="footer-paragraph mb-5">
+                PanonIT Code Academy -> <a href="#">Start Course</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="text-center p-1 footer-text">
+        <p class="mt-3">Copyright &copy; Ime Prezime 2022</p>
+      </footer>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      ></script>
+      <!-- <script src="Scripts/jquery.validate.min.js"></script> -->
+      <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"
+      ></script>
+      <script src="./jquery.js"></script>
+    </div>
   </body>
 </html>
