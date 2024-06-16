@@ -227,3 +227,15 @@ body {
 .survey-section {
   height: 100vh;
 }
+ /* /////// Courses CSS ///// */ */
+
+ .btnDetailsColor {
+  border-color: #b5ebe1 !important;
+  color: #000!important;
+}
+.btnReservationColor {
+  color: #000!important;
+}
+.containerColor{
+  background-color: #4c8a95 !important;
+}
