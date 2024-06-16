@@ -1,0 +1,46 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "Course": "Osnove programiranja",
+      "Starting date": "01.04.2022",
+      "Duration": 20,
+      "Price": 250
+    },
+    {
+      "id": 2,
+      "Course": "Napredno programiranje",
+      "Starting date": "01.04.2022",
+      "Duration": 20,
+      "Price": 250
+    },
+    {
+      "id": 3,
+      "Course": "Web programiranje - Backend",
+      "Starting date": "01.05.2022",
+      "Duration": 30,
+      "Price": 350
+    },
+    {
+      "id": 4,
+      "Course": "Web programiranje - Frontend",
+      "Starting date": "01.05.2022",
+      "Duration": 30,
+      "Price": 350
+    },
+    {
+      "id": 5,
+      "Course": "Manuelno testiranje softvera",
+      "Starting date": "15.04.2022",
+      "Duration": null,
+      "Price": 250
+    },
+    {
+      "id": 6,
+      "Course": "Automatsko testiranje softvera",
+      "Starting date": "15.04.2022",
+      "Duration": null,
+      "Price": 250
+    }
+  ]
+}

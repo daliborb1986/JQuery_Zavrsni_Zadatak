@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Survey</title>
+  </head>
+  <body>
+    <div class="page">
+      <nav class="navbar fixed-top navbar-expand-lg bg-secondary">
+        <div
+          class="container-fluid mx-sm-1 mx-lg-5 text-uppercase d-flex fw-bold p-1"
+        >
+          <a
+            class="navbar-brand mx-sm-1 mx-lg-5 text-light text-center"
+            href="#"
+            >Ime prezime</a
+          >
+          <button
+            class="navbar-toggler p-2 navbar-menu-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            Menu <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse mx-lg-3" id="navbarNav">
+            <ul
+              class="navbar-nav d-flex w-100 justify-content-end mx-sm-1 mx-lg-5"
+            >
+              <li class="nav-item">
+                <a
+                  class="nav-link mx-lg-3 active text-light navigation-button"
+                  aria-current="page"
+                  href="./portfolio.html"
+                  >Portfolio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link mx-lg-3 text-light navigation-button"
+                  href="#about"
+                  >About</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link mx-lg-3 text-light navigation-button"
+                  href="#contact"
+                  >Contact</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link mx-lg-3 text-light navigation-button"
+                  href="./survey.html"
+                  >Survey</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section
+        id="startPage"
+        class="survey-section bg-color d-flex flex-column"
+      >
+        <div class="container-fluid text-center mt-5">
+          <div class="mt-5">
+            <h5 id="titleHeader">Portfolio</h5>
+          </div>
+          <h3 id="titleUpperCase">Wondering if tech is right for you?</h3>
+          <p>Take this 3-minute survey and find out.</p>
+          <button
+            id="startButton"
+            class="btn btn-dark rounded-0 px-3 text-uppercase"
+          >
+            Start
+          </button>
+        </div>
+      </section>
+      <section
+        id="page1"
+        class="survey-section bg-color d-flex align-items-start d-none"
+      >
+        <div
+          class="container d-flex flex-column justify-content-center align-items-start mt-5"
+        >
+          <div class="row align-self-center mt-5">
+            <div class="offset-md-1 col-4 mt-5">
+              <h6 class="bg-color-survey p-1 text-center">Question 1 of 5</h6>
+            </div>
+            <div class="row row align-self-center">
+              <div class="col offset-md-1 col-md-10">
+                <h3 class="fw-bold">Before we dive in, what's your name?</h3>
+                <label for="name"
+                  ><span id="noteToUser">(First name's fine!)</span></label
+                >
+                <br />
+                <div class="input-group my-2">
+                  <input
+                    id="name"
+                    type="text"
+                    class="form-control"
+                    placeholder="Type your answer here..."
+                    name="name"
+                    required
+                  />
+                </div>
+                <button
+                  id="nextButton"
+                  class="btn btn-dark rounded-0 px-3 mt-2 text-uppercase"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="page2"
+        class="survey-section bg-color d-flex align-items-start d-none"
+      >
+        <div
+          class="container d-flex flex-column justify-content-center align-items-start mt-5"
+        >
+          <div class="row align-self-center mt-5">
+            <div class="offset-md-1 col col-md-10">
+              <div class="offset-md-1 col-4 mt-5"">
+              <h6 class="bg-color-survey p-1 px-2">Question 2 of 5</h6>
+            </div>
+
+            <div class="offset-md-1 col-md-9 mb-1">
+              <h3 class="pageTitle mt-2">Where are you in your career?</h3>
+            </div>
+            <div
+              class="offset-md-1 col col-md-10 p-2 mb-1 bg-color-survey d-flex align-items-center border border-dark"
+            >
+              <div class="input-div mx-2">
+                <input
+                  type="radio"
+                  class="radio-button"
+                  id="q1"
+                  name="question"
+                />
+              </div>
+              <div class="label-div">
+                <label class="p-1" for="q1"
+                  >I know what career I want. and I need to learn some
+                  skills</label
+                >
+              </div>
+            </div>
+            <div
+              class="offset-md-1 col col-md-10 p-2 mb-1 bg-color-survey d-flex align-items-center border border-dark"
+            >
+              <div class="input-div mx-2">
+                <input
+                  type="radio"
+                  class="radio-button"
+                  id="q2"
+                  name="question"
+                />
+              </div>
+              <div class="label-div">
+                <label class="p-1" for="q2"
+                  >I like my career--or, at least, I don't HATE it--but I keep
+                  wondering if there's something more out there.</label
+                >
+              </div>
+            </div>
+            <div
+              class="offset-md-1 col col-md-10 p-2 mb-1 bg-color-survey d-flex align-items-center border border-dark"
+            >
+              <div class="input-div mx-2">
+                <input
+                  type="radio"
+                  class="radio-button"
+                  id="q3"
+                  name="question"
+                />
+              </div>
+              <div class="label-div">
+                <label class="p-1" for="q3"
+                  >I took a break from my career, and now I'm ready to get back
+                  into the workforce</label
+                >
+              </div>
+            </div>
+            <div
+              class="offset-md-1 col col-md-10 p-2 mb-1 bg-color-survey d-flex align-items-center border border-dark"
+            >
+              <div class="input-div mx-2">
+                <input
+                  type="radio"
+                  class="radio-button"
+                  id="q4"
+                  name="question"
+                />
+              </div>
+              <div class="label-div">
+                <label class="p-1" for="q4"
+                  >I want to make a career change, but I'm also super
+                  busy.</label
+                >
+              </div>
+            </div>
+            <div
+              class="offset-md-1 col col-md-10 p-2 mb-1 bg-color-survey d-flex align-items-center border border-dark"
+            >
+              <div class="input-div mx-2">
+                <input
+                  type="radio"
+                  class="radio-button"
+                  id="q5"
+                  name="question"
+                />
+              </div>
+              <div class="label-div">
+                <label class="p-1" for="q5">I'm just starting out.</label>
+              </div>
+            </div>
+            <div
+              class="offset-md-1 col col-md-10 p-2 mb-1 bg-color-survey d-flex align-items-center border border-dark"
+            >
+              <div class="input-div mx-2">
+                <input
+                  type="radio"
+                  class="radio-button"
+                  id="q6"
+                  name="question"
+                />
+              </div>
+              <div class="label-div">
+                <label class="p-1" for="q6"
+                  >I'm burnt out from going into an office every day and ready
+                  to make my own hours</label
+                >
+              </div>
+            </div>
+            <div
+              class="offset-md-1 col col-md-10 p-2 mb-1 bg-color-survey d-flex align-items-center border border-dark"
+            >
+              <div class="input-div mx-2">
+                <input
+                  type="radio"
+                  class="radio-button"
+                  id="q7"
+                  name="question"
+                />
+              </div>
+              <div class="label-div">
+                <label id="choiceOther" class="p-1" for="q7"
+                  >Other (please enter)!</label
+                >
+              </div>
+            </div>
+            <div
+              id="inputDiv"
+              class="inputDiv col offset-md-1 col-md-10 d-none"
+            >
+              <input
+                class="col-12 col-md-12 p-3 mt-1 mb-2 bg-color-answer border border-2 border-dark rounded-1"
+                type="text"
+                name="input-answer"
+                id="input-answer"
+                placeholder="Type your answer here..."
+              />
+            </div>
+            <div class="offset-md-1">
+              <button
+                id="goToPage3"
+                class="btn btn-dark rounded-0 px-3 mt-1 text-uppercase"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="page3"
+        class="survey-section bg-color d-flex align-items-start d-none"
+      >
+        <div
+          class="container d-flex flex-column justify-content-center align-items-start mt-5"
+        >
+          <div class="row align-self-center mt-5">
+            <div class="offset-md-1 col col-md-10">
+              <div class="offset-md-1 col-4 mt-5"">
+              <h6 class="bg-color-survey p-1 px-2">Question 3 of 5</h6>
+            </div>
+
+            <div class="offset-md-1 col-md-9 mb-1">
+              <h3 class="pageTitle mt-2">
+                What's your biggest concern about learning tech skills?
+              </h3>
+            </div>
+            <div
+              class="offset-md-1 col col-md-10 p-2 mb-1 bg-color-survey d-flex align-items-center border border-dark"
+            >
+              <div class="input-div mx-2">
+                <input type="radio" id="question3-1" name="questions3" />
+              </div>
+              <div class="label-div">
+                <label class="p-1" for="question3-1"
+                  >Even if I learned the skills, with my weird resume, why would
+                  they hire me over a computer science grad?</label
+                >
+              </div>
+            </div>
+            <div
+              class="offset-md-1 col col-md-10 p-2 mb-1 bg-color-survey d-flex align-items-center border border-dark"
+            >
+              <div class="input-div mx-2">
+                <input type="radio" id="question3-2" name="questions3" />
+              </div>
+              <div class="label-div">
+                <label class="p-1" for="question3-2"
+                  >I don't have the time to learn new skills.</label
+                >
+              </div>
+            </div>
+            <div
+              class="offset-md-1 col col-md-10 p-2 mb-1 bg-color-survey d-flex align-items-center border border-dark"
+            >
+              <div class="input-div mx-2">
+                <input type="radio" id="question3-3" name="questions3" />
+              </div>
+              <div class="label-div">
+                <label class="p-1" for="question3-3"
+                  >I dream of a remote job--but do those jobs REALLY exist for,
+                  you know, REAL people like me?</label
+                >
+              </div>
+            </div>
+            <div
+              class="offset-md-1 col col-md-10 p-2 mb-1 bg-color-survey d-flex align-items-center border border-dark"
+            >
+              <div class="input-div mx-2">
+                <input type="radio" id="question3-4" name="questions3" />
+              </div>
+              <div class="label-div">
+                <label class="p-1" for="question3-4"
+                  >It's too late in my career/life to make this big of a
+                  change.</label
+                >
+              </div>
+            </div>
+            <div
+              class="offset-md-1 col col-md-10 p-2 mb-1 bg-color-survey d-flex align-items-center border border-dark"
+            >
+              <div class="input-div mx-2">
+                <input type="radio" id="question3-5" name="questions3" />
+              </div>
+              <div class="label-div">
+                <label class="p-1" for="question3-5"
+                  >Learning tech skills is expensive and I'm on a tight
+                  budget--I'm not sure it's worth it.</label
+                >
+              </div>
+            </div>
+            <div
+              class="offset-md-1 col col-md-10 p-2 mb-1 bg-color-survey d-flex align-items-center border border-dark"
+            >
+              <div class="input-div mx-2">
+                <input type="radio" id="question3-6" name="questions3" />
+              </div>
+              <div class="label-div">
+                <label class="p-1" for="question3-6"
+                  >My career is okay and learning tech skills is expensive--why
+                  should I rock the boat?</label
+                >
+              </div>
+            </div>
+            <div class="offset-md-1">
+              <button
+                id="goToPage4"
+                class="btn btn-dark rounded-0 px-3 mt-1 text-uppercase"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="page4"
+        class="survey-section bg-color d-flex align-items-start d-none"
+      >
+        <div
+          class="container d-flex flex-column justify-content-center align-items-start mt-5"
+        >
+          <div class="row align-self-center mt-5">
+            <div class="offset-md-1 col col-md-10">
+              <div class="offset-md-2 col-4 mt-5">
+                <h6 class="bg-color-survey p-1 px-2">Question 4 of 5</h6>
+              </div>
+              <div class="offset-md-2 col-md-8 mb-1">
+                <h3 class="pageTitle mt-2">
+                  Picture the perfect workplace for you. What do you see?
+                </h3>
+              </div>
+              <div
+                class="offset-md-2 col col-md-8 p-2 mb-1 bg-color-survey d-flex align-items-center border border-dark"
+              >
+                <div class="input-div mx-2">
+                  <input type="radio" id="q-1" name="questions" />
+                </div>
+                <div class="label-div">
+                  <label class="p-1" for="q-1"
+                    >A bustling agency where I'm surrounded by incredible
+                    creative talent.</label
+                  >
+                </div>
+              </div>
+              <div
+                class="offset-md-2 col col-md-8 p-2 mb-1 bg-color-survey d-flex align-items-center border border-dark"
+              >
+                <div class="input-div mx-2">
+                  <input type="radio" id="q-2" name="questions" />
+                </div>
+                <div class="label-div">
+                  <label class="p-1" for="q-2"
+                    >A collaborative environment where I'm
+                    <span class="text-uppercase">leading</span> the team.</label
+                  >
+                </div>
+              </div>
+              <div
+                class="offset-md-2 col col-md-8 p-2 mb-1 bg-color-survey d-flex align-items-center border border-dark"
+              >
+                <div class="input-div mx-2">
+                  <input type="radio" id="q-3" name="questions" />
+                </div>
+                <div class="label-div">
+                  <label class="p-1" for="q-3"
+                    >A collaborative environment where I'm a full-time member of
+                    a team working shoulder-to-shoulder with fun, experienced
+                    team members.</label
+                  >
+                </div>
+              </div>
+              <div
+                class="offset-md-2 col col-md-8 p-2 mb-1 bg-color-survey d-flex align-items-center border border-dark"
+              >
+                <div class="input-div mx-2">
+                  <input type="radio" id="q-4" name="questions" />
+                </div>
+                <div class="label-div">
+                  <label class="p-1" for="q-4"
+                    >A coworking spot! I work with my team sometimes in-person
+                    and then have the freedom to finish my work around my busy
+                    schedule.</label
+                  >
+                </div>
+              </div>
+              <div
+                class="offset-md-2 col col-md-8 p-2 mb-1 bg-color-survey d-flex align-items-center border border-dark"
+              >
+                <div class="input-div mx-2">
+                  <input type="radio" id="q-5" name="questions" />
+                </div>
+                <div class="label-div">
+                  <label class="p-1" for="q-5"
+                    >A video conference with coworkers on my screen... and the
+                    beach behind it.</label
+                  >
+                </div>
+              </div>
+              <div
+                class="offset-md-2 col col-md-8 p-2 mb-1 bg-color-survey d-flex align-items-center border border-dark"
+              >
+                <div class="input-div mx-2">
+                  <input type="radio" id="q-6" name="questions" />
+                </div>
+                <div class="label-div">
+                  <label class="p-1" for="q-6"
+                    >Work at home in the morning, with time for kids' soccer
+                    practice in the afternoon.</label
+                  >
+                </div>
+              </div>
+              <div class="offset-md-2">
+                <button
+                  id="goToPage5"
+                  class="btn btn-dark rounded-0 px-3 mt-1 text-uppercase"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="page5"
+        class="survey-section bg-color d-flex align-items-start d-none"
+      >
+        <div
+          class="container d-flex flex-column justify-content-center align-items-start mt-5"
+        >
+          <div class="row align-self-center mt-5">
+            <div class="offset-md-1 col col-md-10">
+              <div class="offset-md-1 col-3 mt-5 text-center">
+                <h6 class="bg-color-survey p-1 px-2">Question 5 of 5</h6>
+              </div>
+              <div class="offset-md-1 col-md-10 mb-1">
+                <h3 class="pageTitle mt-2">
+                  Just one more thing! How much you like this survey?
+                </h3>
+                <span id="noteToUser">(We hope think you'll like it!)</span>
+              </div>
+              <div class="offset-md-1 col-md-10 mb-1 align-items-center">
+                <label for="slider" class="form-label mt-2">1-5</label>
+                <input
+                  type="range"
+                  class="form-range"
+                  min="1"
+                  max="5"
+                  id="slider"
+                />
+              </div>
+
+              <div class="offset-md-1">
+                <button
+                  id="submitButton"
+                  class="btn btn-dark rounded-0 px-3 mt-1 text-uppercase"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pages depending on user given score -->
+
+      <section
+        id="page6"
+        class="survey-section bg-color d-flex flex-column d-none"
+      >
+        <div class="container-fluid text-center mt-5">
+          <div class="mt-5">
+            <h3 class="greetingName"></h3>
+          </div>
+          <h3 class="pageTitle">Thank you for your time!</h3>
+          <p>We appreciate your opinion. Oooops, sorry to disappoint you.</p>
+          <img src="./img/001-crying.png" alt="Crying smiley" />
+        </div>
+      </section>
+
+      <section
+        id="page7"
+        class="survey-section bg-color d-flex flex-column d-none"
+      >
+        <div class="container-fluid text-center mt-5">
+          <div class="mt-5">
+            <h3 class="greetingName"></h3>
+          </div>
+          <h3 class="pageTitle">Thank you for your time!</h3>
+          <p>
+            We appreciate your opinion. We hope it will be better next time!
+          </p>
+          <img src="./img/sad-face.png" alt="Crying smiley" />
+        </div>
+      </section>
+    </div>
+
+    <section
+      id="page8"
+      class="survey-section bg-color d-flex flex-column d-none"
+    >
+      <div class="container-fluid text-center mt-5">
+        <div class="mt-5">
+          <h3 class="greetingName"></h3>
+        </div>
+        <h3 class="pageTitle">Thank you for your time!</h3>
+        <p>We appreciate your opinion. Golden middle!</p>
+        <img src="./img/smile.png" alt="Crying smiley" />
+      </div>
+    </section>
+
+    <section
+      id="page9"
+      class="survey-section bg-color d-flex flex-column d-none"
+    >
+      <div class="container-fluid text-center mt-5">
+        <div class="mt-5">
+          <h3 class="greetingName"></h3>
+        </div>
+        <h3 class="pageTitle">Thank you for your time!</h3>
+        <p>We appreciate your opinion. Thanks for the very good rating!</p>
+        <img src="./img/smile wide.png" alt="Crying smiley" />
+      </div>
+    </section>
+
+    <section
+      id="page10"
+      class="survey-section bg-color d-flex flex-column d-none"
+    >
+      <div class="container-fluid text-center mt-5">
+        <div class="mt-5">
+          <h3 class="greetingName"></h3>
+        </div>
+        <h3 class="pageTitle">Thank you for your time!</h3>
+        <p>
+          We appreciate your opinion. We are glad to meet your requirements!
+        </p>
+        <img src="./img/in-love.png" alt="Crying smiley" />
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
