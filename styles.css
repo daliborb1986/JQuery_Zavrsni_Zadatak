@@ -85,6 +85,7 @@ body {
 .images {
   width: 100%;
   border-radius: 5px;
+  margin: 0 auto;
 }
 .input-field {
   font-size: 0.8125rem;
@@ -162,18 +163,18 @@ body {
   content: '';
   background-color: #f6f8fd;
   display: inline-block;
-  height: 2px;
+  height: 3px;
   position: relative;
   vertical-align: middle;
   width: 15%;
 }
 .star::before {
   right: 0.5rem;
-  margin-left: -50%;
+  margin-left: 33%;
 }
 .star::after {
   left: 0.5rem;
-  margin-right: -50%;
+  margin-right: 30%;
 }
 .star-dark::before,
 .star-dark::after {
@@ -227,15 +228,14 @@ body {
 .survey-section {
   height: 100vh;
 }
- /* /////// Courses CSS ///// */ */
-
- .btnDetailsColor {
+/* /////// Courses CSS ///// */
+*/ .btnDetailsColor {
   border-color: #b5ebe1 !important;
-  color: #000!important;
+  color: #000 !important;
 }
 .btnReservationColor {
-  color: #000!important;
+  color: #000 !important;
 }
-.containerColor{
+.containerColor {
   background-color: #4c8a95 !important;
 }
