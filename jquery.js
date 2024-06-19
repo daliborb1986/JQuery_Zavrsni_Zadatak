@@ -28,8 +28,7 @@ function infoCourse(courseId) {
     success: function (course) {
       $('#modalDetails').modal('toggle');
       $('#modalLabel').text(course.course);
-      $('#modalPrice').text(`${course.price}$`)
+      $('#modalPrice').text(`${course.price} $`);
     },
   });
 }
-
