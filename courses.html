@@ -103,100 +103,91 @@
           </h3>
         </div>
       </header>
-
-      <div class="container-fluid containerColor p-4 pb-5">
-        <table id="table" class="table table-striped table-hover p-1">
-          <thead>
-            <tr>
-              <th class="containerColor">Courses</th>
-              <th class="containerColor">Starting date</th>
-              <th class="containerColor">Duration</th>
-              <th class="containerColor">Price</th>
-              <th class="containerColor">Details</th>
-              <th class="containerColor"></th>
-            </tr>
-          </thead>
-          <tbody id="tbody"></tbody>
-        </table>
-        <div class="buttonReservation w-100 d-flex justify-content-end">
-          <button
-            type="button"
-            class="btn btn-outline-info px-5 my-3 text-light"
-          >
-            View reservations
-          </button>
-        </div>
-      </div>
-      <button
-        id="modoal"
-        type="button"
-        class="modal-button"
-        data-bs-toggle="modal"
-        data-bs-target="#modalDetails"
-      >
-        button
-      </button>
-
-      <!-- Modal -->
-
-      <div
-        class="modal fade"
-        id="modalDetails"
-        data-bs-backdrop="static"
-        tabindex="-1"
-        aria-labelledby="ModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content modal-header-container">
-            <div class="d-flex flex-column">
-              <h1
-                class="modal-title modal-title-container w-100 py-3 mt-5 text-center"
-                id="ModalLabel"
-              >
-                dadaa
-              </h1>
-              <button
-                type="button"
-                class="btn-close modal-header-button"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-              <p class="lead mb-4 py-1 my-3 star star-dark">
-                <i class="fa-solid fa-star dark-star dark-modal-star"></i>
-              </p>
-            </div>
-            <div
-              class="modal-body-container p-sm-1 mx-sm-1 p-md-3 mx-md-5 my-1 d-flex flex-column align-items-center"
+      <section>
+        <div class="container-fluid containerColor p-4 pb-5">
+          <table id="table" class="table table-striped table-hover p-1">
+            <thead>
+              <tr>
+                <th class="containerColor">Courses</th>
+                <th class="containerColor">Starting date</th>
+                <th class="containerColor">Duration</th>
+                <th class="containerColor">Price</th>
+                <th class="containerColor">Details</th>
+                <th class="containerColor"></th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <div class="buttonReservation w-100 d-flex justify-content-end">
+            <button
+              type="button"
+              class="btn btn-outline-info px-5 my-3 text-light"
             >
-              <img
-                class="images image-item1 w-75"
-                src="./img/kurs-osnove-programiranja.jpg"
-                alt="Keyboard image"
-              />
-              <p class="p-4 mt-4 text-center">
-                Ukoliko i Vi želite karijeru u IT sektoru a pitate se odakle
-                početi, kako je najlakše naučiti programiranje i da li je teško
-                savladati programiranje, ukoliko želite da načinite prvi korak i
-                uđete u svet informacionih tehnolgija, SmartInIT kursevi
-                programiranja su pravi izbor za Vas.
-              </p>
-            </div>
-            <p id="modalPrice" class="p-2 mt-4 text-center"></p>
-            <div class="text-center p-2 mb-4 modal-button-container">
-              <button
-                type="button"
-                class="btn modal-close-button p-1 px-2"
-                data-bs-dismiss="modal"
+              View reservations
+            </button>
+          </div>
+        </div>
+        <button onclick="ucitaj()">Ucitaj</button>
+        <p id="fajl"></p>
+        <!-- Modal -->
+
+        <div
+          class="modal fade"
+          id="modalDetails"
+          data-bs-backdrop="static"
+          tabindex="-1"
+          aria-labelledby="ModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content modal-header-container">
+              <div class="d-flex flex-column">
+                <h1
+                  class="modal-title modal-title-container w-100 py-3 mt-5 text-center"
+                  id="modalLabel"
+                >
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close modal-header-button"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <p class="lead mb-4 py-1 my-3 star star-dark">
+                  <i class="fa-solid fa-star dark-star dark-modal-star"></i>
+                </p>
+              </div>
+              <div
+                class="modal-body-container p-sm-1 mx-sm-1 p-md-3 mx-md-5 my-1 d-flex flex-column align-items-center"
               >
-                <i class="fa-solid fa-xmark text-white"></i>
-                Close Window
-              </button>
+                <img
+                  class="images image-item1 w-75"
+                  src="./img/kurs-osnove-programiranja.jpg"
+                  alt="Keyboard image"
+                />
+                <p class="p-4 mt-4 text-center">
+                  Ukoliko i Vi želite karijeru u IT sektoru a pitate se odakle
+                  početi, kako je najlakše naučiti programiranje i da li je
+                  teško savladati programiranje, ukoliko želite da načinite prvi
+                  korak i uđete u svet informacionih tehnolgija, SmartInIT
+                  kursevi programiranja su pravi izbor za Vas.
+                </p>
+              </div>
+              <p id="modalPrice" class="p-2 mt-4 text-center"></p>
+              <div class="text-center p-2 mb-4 modal-button-container">
+                <button
+                  type="button"
+                  class="btn modal-close-button p-1 px-2"
+                  data-bs-dismiss="modal"
+                >
+                  <i class="fa-solid fa-xmark text-white"></i>
+                  Close Window
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
+      </section>
       <section>
         <div class="container-fluid py-5 align-middle footer-container">
           <div class="row">
