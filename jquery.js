@@ -5,18 +5,19 @@ var get = $.ajax({
 
 get.done(function (podaci) {
   $.each(podaci, function (i, podatak) {
-    $('tbody').append(
+    $('#coursesBody').append(
       `<tr><td>${podatak.course}</td>
         <td>${podatak.starting_date}</td>
         <td>${podatak.duration}</td>
         <td>${podatak.price}</td>
         <td><button id="btn${podatak.id}Info" class="btn btn-outline-info btnDetailsColor" onclick="infoCourse(${podatak.id}, event)">View Details</button></td>
-        <td><button id="btn${podatak.id}Reservation" class="btn btn-outline-success btnDetailsColor"onclick="reserveCourse(${podatak.id})">Make Reservation</button></td></tr>
+        <td><button id="btn${podatak.id}Reservation" class="btn btn-outline-success btnDetailsColor" onclick="reserveCourse(${podatak.id},event)">Make Reservation</button></td></tr>
         `
     );
   });
   $('#table').dataTable();
 });
+
 get.fail(function (podaci) {
   alert(podaci.statusText);
 });
@@ -90,4 +91,63 @@ function setValidationForm() {
       },
     },
   });
+  $('#saveReservation').on('click', function (e) {
+    e.preventDefault();
+    if ($('#modalForm').valid()) {
+      var reservationData = {
+        name: $('#name').val(),
+        surname: $('#surname').val(),
+        email: $('#email').val(),
+        course: $('#selectedCourse').val(),
+        price: $('#price').val(),
+        comment: $('#comment').val(),
+      };
+      $.ajax({
+        type: 'POST',
+        url: 'http://localhost:3000/reservations',
+        data: JSON.stringify(reservationData),
+        contentType: 'application/json',
+        success: function (response) {
+          alert('Reservation successful');
+          $('#modalUnosForma').modal('hide');
+        },
+        error: function (error) {
+          alert('Failed to save reservation');
+        },
+      });
+    }
+  });
 }
+// /////druga tabla///////
+
+var get = $.ajax({
+  type: 'GET',
+  url: 'http://localhost:3000/reservations',
+});
+
+get.done(function (podaci) {
+  $.each(podaci, function (i, podatak) {
+    $('#reservationsBody').append(
+      `<tr><td>${podatak.name}</td>
+        <td>${podatak.surname}</td>
+        <td>${podatak.email}</td>
+        <td>${podatak.course}</td>
+        <td>${podatak.price}</td>
+        <td>${podatak.comment}</td>
+        <td><button id="btn${podatak.id}Info" class="btn btn-outline-info btnDetailsColor" onclick="infoCourse(${podatak.id}, event)">View Details</button></td>
+        <td><button id="btn${podatak.id}Reservation" class="btn btn-outline-success btnDetailsColor" onclick="reserveCourse(${podatak.id},event)">Make Reservation</button></td></tr>
+        `
+    );
+  });
+  $('#table').dataTable();
+});
+
+get.fail(function (podaci) {
+  alert(podaci.statusText);
+});
+
+$('#viewReservation').on('click', function () {
+  $('#table_wrapper').toggleClass('d-none');
+  $('#tableReservation').toggleClass('d-none');
+  $('#viewReservation').text('Back to Courses');
+});

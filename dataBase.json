@@ -1,46 +1,66 @@
 {
   "courses": [
     {
-      "id": 1,
+      "id": "1",
       "course": "Osnove programiranja",
       "starting_date": "01.04.2022",
       "duration": 20,
       "price": 250
     },
     {
-      "id": 2,
+      "id": "2",
       "course": "Napredno programiranje",
       "starting_date": "01.04.2022",
       "duration": 20,
       "price": 250
     },
     {
-      "id": 3,
+      "id": "3",
       "course": "Web programiranje - Backend",
       "starting_date": "01.05.2022",
       "duration": 30,
       "price": 350
     },
     {
-      "id": 4,
+      "id": "4",
       "course": "Web programiranje - Frontend",
       "starting_date": "01.05.2022",
       "duration": 30,
       "price": 350
     },
     {
-      "id": 5,
+      "id": "5",
       "course": "Manuelno testiranje softvera",
       "starting_date": "15.04.2022",
       "duration": "",
       "price": 250
     },
     {
-      "id": 6,
+      "id": "6",
       "course": "Automatsko testiranje softvera",
       "starting_date": "15.04.2022",
       "duration": "",
       "price": 250
+    }
+  ],
+  "reservations": [
+    {
+      "id": "b640",
+      "name": "Tatjana",
+      "surname": "Grmaskoski Belusic",
+      "email": "daliborb1986@gmail.com",
+      "course": "Napredno programiranje",
+      "price": "250$",
+      "comment": "danas"
+    },
+    {
+      "id": "5d50",
+      "name": "dado",
+      "surname": "Belusic",
+      "email": "daliborb1986@gmail.com",
+      "course": "Web programiranje - Frontend",
+      "price": "350$",
+      "comment": "dobro ide"
     }
   ]
 }

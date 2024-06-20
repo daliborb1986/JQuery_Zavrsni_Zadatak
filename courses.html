@@ -116,25 +116,37 @@
                 <th class="containerColor"></th>
               </tr>
             </thead>
-            <tbody></tbody>
+            <tbody id="coursesBody"></tbody>
+          </table>
+          <table
+            id="tableReservation"
+            class="table table-striped table-hover p-1 d-none"
+          >
+            <thead>
+              <tr>
+                <th class="containerColor">Name</th>
+                <th class="containerColor">Surname</th>
+                <th class="containerColor">Email</th>
+                <th class="containerColor">Course</th>
+                <th class="containerColor">Price</th>
+                <th class="containerColor">Note</th>
+                <th class="containerColor"></th>
+                <th class="containerColor"></th>
+              </tr>
+            </thead>
+            <tbody id="reservationsBody"></tbody>
           </table>
           <div class="buttonReservation w-100 d-flex justify-content-end">
             <button
               type="button"
+              id="viewReservation"
               class="btn btn-outline-info px-5 my-3 text-light"
             >
               View reservations
             </button>
           </div>
         </div>
-        <button
-          type="button"
-          class="modal-button"
-          data-bs-toggle="modal"
-          data-bs-target="#modalUnosForma"
-        >
-          buton
-        </button>
+
         <!-- Reservation Modal -->
 
         <div class="modal fade" id="modalUnosForma" role="dialog">
@@ -221,7 +233,8 @@
                 </div>
                 <div class="text-center p-2 modal-button-container">
                   <button
-                    type="button"
+                    type="submit"
+                    id="saveReservation"
                     class="btn modal-close-button p-1 px-2"
                     data-bs-dismiss="modal"
                   >
