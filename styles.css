@@ -229,7 +229,7 @@ body {
   height: 100vh;
 }
 /* /////// Courses CSS ///// */
-*/ .btnDetailsColor {
+.btnDetailsColor {
   border-color: #b5ebe1 !important;
   color: #000 !important;
 }

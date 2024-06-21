@@ -45,22 +45,31 @@
   ],
   "reservations": [
     {
-      "id": "b640",
+      "id": "8b8f",
       "name": "Tatjana",
       "surname": "Grmaskoski Belusic",
       "email": "daliborb1986@gmail.com",
-      "course": "Napredno programiranje",
+      "course": "Automatsko testiranje softvera",
       "price": "250$",
-      "comment": "danas"
+      "comment": "sdfsdf"
     },
     {
-      "id": "5d50",
+      "id": "4e5d",
       "name": "dado",
-      "surname": "Belusic",
-      "email": "daliborb1986@gmail.com",
+      "surname": "asdff",
+      "email": "slavicagrmaskoski@gmail.com",
+      "course": "Napredno programiranje",
+      "price": "250$",
+      "comment": ""
+    },
+    {
+      "id": "c3f8",
+      "name": "daki",
+      "surname": "belu",
+      "email": "D@kd",
       "course": "Web programiranje - Frontend",
       "price": "350$",
-      "comment": "dobro ide"
+      "comment": "nista"
     }
   ]
 }

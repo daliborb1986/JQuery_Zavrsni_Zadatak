@@ -90,11 +90,8 @@ function setValidationForm() {
         minlength: 'Komentar mora imati najmanje 5 karaktera',
       },
     },
-  });
-  $('#saveReservation').on('click', function (e) {
-    e.preventDefault();
-    if ($('#modalForm').valid()) {
-      var reservationData = {
+    submitHandler: function (form) {
+      let reservationData = {
         name: $('#name').val(),
         surname: $('#surname').val(),
         email: $('#email').val(),
@@ -102,52 +99,134 @@ function setValidationForm() {
         price: $('#price').val(),
         comment: $('#comment').val(),
       };
+      let reservationId = $('#reservationId').val();
+      let requestType = reservationId ? 'PUT' : 'POST';
+      let requestUrl = `http://localhost:3000/reservations${
+        reservationId ? '/' + reservationId : ''
+      }`;
       $.ajax({
-        type: 'POST',
-        url: 'http://localhost:3000/reservations',
+        type: requestType,
+        url: requestUrl,
         data: JSON.stringify(reservationData),
         contentType: 'application/json',
         success: function (response) {
-          alert('Reservation successful');
+          alert('Reservation saved successfully');
           $('#modalUnosForma').modal('hide');
+          loadReservations(); // Reload reservations to show updated data
         },
         error: function (error) {
           alert('Failed to save reservation');
         },
       });
-    }
+    },
   });
 }
+
+$('#saveReservation').on('click', function (e) {
+  e.preventDefault();
+  if ($('#modalForm').valid()) {
+    var reservationData = {
+      name: $('#name').val(),
+      surname: $('#surname').val(),
+      email: $('#email').val(),
+      course: $('#selectedCourse').val(),
+      price: $('#price').val(),
+      comment: $('#comment').val(),
+    };
+
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost:3000/reservations',
+      data: JSON.stringify(reservationData),
+      contentType: 'application/json',
+      success: function (response) {
+        alert('Reservation successful');
+        $('#modalUnosForma').modal('hide');
+      },
+      error: function (error) {
+        alert('Failed to save reservation');
+      },
+    });
+  }
+});
+
 // /////druga tabla///////
 
-var get = $.ajax({
+var getReservations = $.ajax({
   type: 'GET',
   url: 'http://localhost:3000/reservations',
 });
 
-get.done(function (podaci) {
-  $.each(podaci, function (i, podatak) {
+getReservations.done(function (data) {
+  $.each(data, function (i, reservation) {
     $('#reservationsBody').append(
-      `<tr><td>${podatak.name}</td>
-        <td>${podatak.surname}</td>
-        <td>${podatak.email}</td>
-        <td>${podatak.course}</td>
-        <td>${podatak.price}</td>
-        <td>${podatak.comment}</td>
-        <td><button id="btn${podatak.id}Info" class="btn btn-outline-info btnDetailsColor" onclick="infoCourse(${podatak.id}, event)">View Details</button></td>
-        <td><button id="btn${podatak.id}Reservation" class="btn btn-outline-success btnDetailsColor" onclick="reserveCourse(${podatak.id},event)">Make Reservation</button></td></tr>
+      `<tr><td>${reservation.name}</td>
+        <td>${reservation.surname}</td>
+        <td>${reservation.email}</td>
+        <td>${reservation.course}</td>
+        <td>${reservation.price}</td>
+        <td>${reservation.comment}</td>
+        <td><button id="btn${reservation.id}Edit" class="btn btn-outline-warning btnDetailsColor" onclick="editReservation(${reservation.id})">Change Reservation</button></td>
+        <td><button id="btn${reservation.id}Delete" class="btn btn-outline-danger btnDetailsColor btnDeleteReservation" onclick="deleteReservation(${reservation.id},event)">Delete Reservation</button></td></tr>
         `
     );
   });
-  $('#table').dataTable();
+  $('#tableReservation').dataTable();
 });
 
-get.fail(function (podaci) {
-  alert(podaci.statusText);
+getReservations.fail(function (data) {
+  alert(data.statusText);
 });
 
 $('#viewReservation').on('click', function () {
   $('#table_wrapper').toggleClass('d-none');
-  $('#tableReservation').toggleClass('d-none');
-  $('#viewReservation').text('Back to Courses');
+  $('#secondTableContainer').toggleClass('d-none');
+  $('#totalPriceContainer').toggleClass('d-none');
+  $('#viewReservation').text(
+    $('#table_wrapper').hasClass('d-none')
+      ? 'Back to Courses'
+      : 'View Reservations'
+  );
+  calculateTotalPrice();
 });
+
+function deleteReservation(podatak_id, event) {
+  $.ajax({
+    url: 'http:localhost:3000/reservations/' + podatak_id,
+    type: 'DELETE',
+    dataType: 'json',
+    success: function () {
+      $(event.target).parent().parent().remove();
+      alert('Reservation deleted successfully');
+    },
+    error: function () {
+      alert('Failed to delete reservation');
+    },
+  });
+}
+$('#tableReservation').on('click', '.btnDeleteReservation', function (event) {
+  var reservationId = $(this).data('reservation-id');
+  deleteReservation(reservationId, event);
+});
+
+function calculateTotalPrice() {
+  $.ajax({
+    type: 'GET',
+    url: 'http://localhost:3000/reservations',
+    success: function (reservations) {
+      let totalPrice = 0;
+
+      // Iterate through reservations and sum up prices
+      $.each(reservations, function(i, reservation){
+       totalPrice += parseFloat(reservation.price)
+        
+      })
+      $('#priceTotal').text('Total Price: ' + totalPrice + '$');
+    },
+    error: function () {
+    alert('Failed to calculate price');
+    },
+  })
+}
+
+
