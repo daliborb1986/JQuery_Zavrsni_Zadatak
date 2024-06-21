@@ -239,3 +239,6 @@ body {
 .containerColor {
   background-color: #4c8a95 !important;
 }
+#modalForm label.error {
+  color: red;
+}

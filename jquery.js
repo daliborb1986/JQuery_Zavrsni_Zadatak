@@ -90,7 +90,7 @@ function setValidationForm() {
         minlength: 'Komentar mora imati najmanje 5 karaktera',
       },
     },
-    submitHandler: function (form) {
+    submitHandler: function () {
       let reservationData = {
         name: $('#name').val(),
         surname: $('#surname').val(),
@@ -124,8 +124,21 @@ function setValidationForm() {
 
 $('#saveReservation').on('click', function (e) {
   e.preventDefault();
+
   if ($('#modalForm').valid()) {
+    $.ajax({
+      type: 'GET',
+      url: 'http://localhost:3000/reservations',
+      success: function (reservations) {
+        let maxId = 0;
+        if (reservation.length > 0) {
+          maxId = Math.max(...reservations.map((r) => r.id));
+        }
+        const nextId = maxId + 1;
+      
+    
     var reservationData = {
+      id: nextId,
       name: $('#name').val(),
       surname: $('#surname').val(),
       email: $('#email').val(),
@@ -147,7 +160,11 @@ $('#saveReservation').on('click', function (e) {
         alert('Failed to save reservation');
       },
     });
-  }
+  },
+  error: function (error) {
+    alert('Failed to fetch reservations');
+  },
+
 });
 
 // /////druga tabla///////
@@ -166,8 +183,8 @@ getReservations.done(function (data) {
         <td>${reservation.course}</td>
         <td>${reservation.price}</td>
         <td>${reservation.comment}</td>
-        <td><button id="btn${reservation.id}Edit" class="btn btn-outline-warning btnDetailsColor" onclick="editReservation(${reservation.id})">Change Reservation</button></td>
-        <td><button id="btn${reservation.id}Delete" class="btn btn-outline-danger btnDetailsColor btnDeleteReservation" onclick="deleteReservation(${reservation.id},event)">Delete Reservation</button></td></tr>
+        <td><button id="btn${reservation.id}Edit" class="btn btn-outline-warning btnDetailsColor" onclick="changeReservation(${reservation.id}, event)">Change Reservation</button></td>
+        <td><button id="btn${reservation.id}Edit" class="btn btn-outline-danger btnDeleteReservation" onclick="deleteReservation(${reservation.id}, event)">Delete Reservation</button></td></tr>
         `
     );
   });
@@ -177,6 +194,21 @@ getReservations.done(function (data) {
 getReservations.fail(function (data) {
   alert(data.statusText);
 });
+
+function deleteReservation(element_id, event) {
+  $.ajax({
+    url: 'http://localhost:3000/reservations/' + id,
+    type: 'DELETE',
+    success: function () {
+      $(event.target).closest('tr').remove();
+      alert('Reservation deleted successfully');
+      calculateTotalPrice();
+    },
+    error: function () {
+      alert('Failed to delete reservation');
+    },
+  });
+}
 
 $('#viewReservation').on('click', function () {
   $('#table_wrapper').toggleClass('d-none');
@@ -190,25 +222,6 @@ $('#viewReservation').on('click', function () {
   calculateTotalPrice();
 });
 
-function deleteReservation(podatak_id, event) {
-  $.ajax({
-    url: 'http:localhost:3000/reservations/' + podatak_id,
-    type: 'DELETE',
-    dataType: 'json',
-    success: function () {
-      $(event.target).parent().parent().remove();
-      alert('Reservation deleted successfully');
-    },
-    error: function () {
-      alert('Failed to delete reservation');
-    },
-  });
-}
-$('#tableReservation').on('click', '.btnDeleteReservation', function (event) {
-  var reservationId = $(this).data('reservation-id');
-  deleteReservation(reservationId, event);
-});
-
 function calculateTotalPrice() {
   $.ajax({
     type: 'GET',
@@ -217,16 +230,38 @@ function calculateTotalPrice() {
       let totalPrice = 0;
 
       // Iterate through reservations and sum up prices
-      $.each(reservations, function(i, reservation){
-       totalPrice += parseFloat(reservation.price)
-        
-      })
+      $.each(reservations, function (i, reservation) {
+        totalPrice += parseFloat(reservation.price);
+      });
       $('#priceTotal').text('Total Price: ' + totalPrice + '$');
     },
     error: function () {
-    alert('Failed to calculate price');
+      alert('Failed to calculate price');
     },
-  })
+  });
 }
 
+$('#modalUnosForma').on('click', '.btn-outline-warning', function (event) {
+  var reservationId = $(this).data('id');
+  editReservation(reservationId);
+});
 
+function editReservation(id) {
+  $.ajax({
+    type: 'GET',
+    url: `http://localhost:3000/reservations/${id}`,
+    success: function (reservation) {
+      $('#reservationId').val(reservation.id);
+      $('#name').val(reservation.name);
+      $('#surname').val(reservation.surname);
+      $('#email').val(reservation.email);
+      $('#selectedCourse').val(reservation.course);
+      $('#price').val(reservation.price);
+      $('#comment').val(reservation.comment);
+      $('#modalUnosForma').modal('show');
+    },
+    error: function () {
+      alert('Failed to load reservation');
+    },
+  });
+}
