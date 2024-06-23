@@ -44,23 +44,6 @@
     }
   ],
   "reservations": [
-    {
-      "id": "5232",
-      "name": "Tatjana",
-      "surname": "Grmaskoski Belusic",
-      "email": "daliborb1986@gmail.com",
-      "course": "Manuelno testiranje softvera",
-      "price": "250$",
-      "comment": ""
-    },
-    {
-      "id": "cfce",
-      "name": "Tatjana",
-      "surname": "Grmaskoski Belusic",
-      "email": "daliborb1986@gmail.com",
-      "course": "Web programiranje - Backend",
-      "price": "350$",
-      "comment": ""
-    }
+    
   ]
 }
