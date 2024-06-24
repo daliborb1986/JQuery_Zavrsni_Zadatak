@@ -185,8 +185,8 @@ getReservations.done(function (data) {
         <td>${reservation.course}</td>
         <td>${reservation.price}</td>
         <td>${reservation.comment}</td>
-        <td><button id="${reservation.id}" class="btn btn-outline-warning btnDetailsColor" onclick="changeReservation(${reservation.id}, event)">Change Reservation</button></td>
-        <td><button id="${reservation.id}" class="btn btn-outline-danger btnDeleteReservation" data-id="${reservation.id}">Delete Reservation</button></td></tr>
+        <td><button id="'${reservation.id}'" class="btn btn-outline-warning btnDetailsColor" onclick="changeReservation(${reservation.id}, event)">Change Reservation</button></td>
+        <td><button id="'${reservation.id}'" class="btn btn-outline-danger btnDeleteReservation" data-id="${reservation.id}">Delete Reservation</button></td></tr>
         `
     );
   });
@@ -215,8 +215,6 @@ function calculateTotalPrice() {
     url: 'http://localhost:3000/reservations',
     success: function (reservations) {
       let totalPrice = 0;
-
-      // Iterate through reservations and sum up prices
       $.each(reservations, function (i, reservation) {
         totalPrice += parseFloat(reservation.price);
       });

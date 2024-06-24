@@ -44,6 +44,32 @@
     }
   ],
   "reservations": [
-    
+    {
+      "id": 1,
+      "name": "Tatjana",
+      "surname": "Grmaskoski Belusic",
+      "email": "daliborb1986@gmail.com",
+      "course": "Automatsko testiranje softvera",
+      "price": "250$",
+      "comment": "sdfsdf"
+    },
+    {
+      "id": 2,
+      "name": "Tatjana",
+      "surname": "Grmaskoski Belusic",
+      "email": "daliborb1986@gmail.com",
+      "course": "Automatsko testiranje softvera",
+      "price": "250$",
+      "comment": ""
+    },
+    {
+      "id": 3,
+      "name": "Tatjana",
+      "surname": "Grmaskoski Belusic",
+      "email": "daliborb1986@gmail.com",
+      "course": "Manuelno testiranje softvera",
+      "price": "250$",
+      "comment": ""
+    }
   ]
 }
